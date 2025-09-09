@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Nakli Birthday Billu 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at 30% 20%, #ffd6e7 0%, #ffc1dd 30%, #ff9ecb 60%, #ff8ac2 100%);
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      margin: 18px 12px 0;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px #d63384;
+    }
+
+    /* Layout */
+    .scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 90px;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #ff5fa2;
+      transform: rotate(45deg);
+      animation: float 7s infinite;
+      filter: drop-shadow(0 3px 6px rgba(214,51,132,0.35));
+    }
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #ff5fa2;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+
+    /* Cake (two halves) */
+    .cake-area { margin-top: 28px; }
+    .cake {
+      margin: 0 auto;
+      width: 300px;
+      height: 200px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .half {
+      width: 140px;
+      height: 200px;
+      background: linear-gradient(180deg, #ffd1e6 0%, #ffb3d9 60%, #ff8bc4 100%);
+      border-radius: 0 0 20px 20px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 1s ease;
+    }
+    .half::before {
+      content: '';
+      position: absolute;
+      top: -48px;
+      width: 140px;
+      height: 48px;
+      background: repeating-linear-gradient(90deg, #ff66b2 0 12px, #ff77bb 12px 24px);
+      border-radius: 20px 20px 0 0;
+    }
+    .half::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      right: 12px;
+      height: 16px;
+      background: radial-gradient(circle at 10px 7px, #ffe0ef 0 6px, transparent 7px) repeat-x;
+      background-size: 24px 16px;
+    }
+    .left::before {
+      left: 0;
+      border-radius: 20px 0 0 0;
+    }
+    .right::before {
+      right: 0;
+      border-radius: 0 20px 0 0;
+    }
+
+    /* Cake plate & Candle */
+    .plate {
+      position: absolute;
+      bottom: -16px;
+      width: 360px;
+      height: 28px;
+      background: radial-gradient(circle at 50% 30%, #ffffffaa, #ffe3f1);
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .candle {
+      position: absolute;
+      top: -10px;
+      width: 12px;
+      height: 60px;
+      background: linear-gradient(180deg, #fff5f9, #ffd1e6);
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .candle::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 16px;
+      background: radial-gradient(circle at 50% 30%, #fff7b1 0 4px, #ffd05a 5px, #ff9b3d 10px, transparent 11px);
+      border-radius: 50% 50% 45% 45%;
+      animation: flicker 0.8s infinite;
+      filter: drop-shadow(0 0 6px rgba(255,208,90,0.9));
+    }
+    @keyframes flicker {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.95; }
+      50% { transform: translateX(-50%) scale(1.08); opacity: 0.75; }
+    }
+
+    /* Knife */
+    .knife {
+      margin: 20px auto;
+      width: 160px;
+      height: 24px;
+      background: linear-gradient(90deg, #cfd8dc, #b0bec5);
+      cursor: pointer;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
+    .knife::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(180deg, #6d4c41, #4e342e);
+      border-radius: 50%;
+    }
+    .knife-hint {
+      font-size: 0.9rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px #c2185b;
+      margin-top: 6px;
+    }
+
+    /* Garland & balloons */
+    .garland {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      margin-top: 8px;
+    }
+    .garland::before, .garland::after {
+      content: '';
+      position: absolute;
+      left: 5%; right: 5%;
+      top: 18px;
+      height: 0;
+      border-top: 4px dashed #ff7ab8;
+      filter: drop-shadow(0 2px 2px rgba(214,51,132,0.3));
+    }
+    .balloon {
+      position: absolute;
+      width: 56px;
+      height: 70px;
+      background: radial-gradient(circle at 40% 30%, #ffd1e6, #ff90c6);
+      border-radius: 50% 50% 45% 45%;
+      animation: bob 4.5s ease-in-out infinite;
+      box-shadow: 0 6px 16px rgba(214,51,132,0.25);
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      width: 1px;
+      height: 30px;
+      background: #ff9bcf;
+      transform: translateX(-50%);
+    }
+    .b1 { left: 12%; animation-delay: 0s; }
+    .b2 { right: 12%; animation-delay: 1.2s; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* Card */
+    .card {
+      display: none;
+      background: #fff0f6;
+      border: 2px solid #ff66b2;
+      border-radius: 15px;
+      padding: 22px;
+      width: min(92vw, 360px);
+      margin: 18px auto 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      color: #d63384;
+    }
+    .card img {
+      width: 110px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 6px 16px rgba(214,51,132,0.35);
+    }
+    .card h2 {
+      margin: 10px 0;
+    }
+
+    /* Footer ribbon */
+    .ribbon {
+      position: fixed;
+      left: 0; right: 0; bottom: -20px;
+      height: 120px;
+      background: radial-gradient(circle at 50% -40px, #ffd9ea, #ffb8d8 60%, #ff9bcf);
+      z-index: -1;
+    }
+
+    /* Sparkles */
+    .sparkle { position: absolute; width: 6px; height: 6px; background: #fff; border-radius: 50%; box-shadow: 0 0 8px #fff; animation: twinkle 1.6s infinite; }
+    @keyframes twinkle { 0%,100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+    /* Cake cutting */
+    .cut-left {
+      transform: translateX(-150px) rotate(-20deg);
+    }
+    .cut-right {
+      transform: translateX(150px) rotate(20deg);
+    }
+
+    /* Confetti - bursts from cake center */
+    .confetti {
+      position: fixed;
+      width: 9px;
+      height: 14px;
+      opacity: 0.95;
+      border-radius: 2px;
+      transform: translate(0,0) rotate(var(--rot,0deg));
+      top: var(--y, 50vh);
+      left: var(--x, 50vw);
+      animation: burst 1.4s ease-out forwards;
+    }
+    .confetti.circle { border-radius: 50%; width: 10px; height: 10px; }
+    .confetti.diamond { transform: translate(0,0) rotate(45deg); }
+    .confetti.tri { clip-path: polygon(50% 0, 0 100%, 100% 100%); height: 12px; }
+    @keyframes burst {
+      to {
+        transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(calc(var(--rot,0deg) + 540deg));
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Nakli Birthday to You, Billu 🎉</h1>
+  <div class="garland">
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+  </div>
+
+  <!-- Hearts -->
+  <div id="hearts"></div>
+
+  <!-- Cake -->
+  <div class="scene">
+  <div class="cake-area">
+  <div class="cake" id="cake">
+    <div class="half left"></div>
+    <div class="half right"></div>
+    <div class="candle" id="candle"></div>
+    <div class="plate"></div>
+  </div>
+  </div>
+
+  <!-- Knife -->
+  <div class="knife" onclick="cutCake()" title="Tap to cut the cake"></div>
+  <div class="knife-hint">Tap the knife to cut the cake ✨</div>
+
+  <!-- Hidden Card -->
+  <div class="card" id="card">
+    <img src="bb.png" alt="My Billu">
+    <h2>Happy Nakli Birthday, my Billu ❤️</h2>
+    <p>
+      My favorite person, my softest place — you make every day sweeter than cake. 🌸<br>
+      May your world always glow in pink sunsets, soft laughter, and cozy hugs. 💕<br>
+      Keep that beautiful smile shining — it suits you the most, meri pyaari. 💖<br>
+      Aise hi khush rehna hamesha... and forever, I love you, my rasmalai. 💞
+    </p>
+  </div>
+  </div>
+  <div class="ribbon"></div>
+
+  <!-- Music -->
+  <audio id="bgm" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Floating hearts generator
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      const size = 12 + Math.random() * 16; // 12-28px
+      heart.style.width = size + 'px';
+      heart.style.height = size + 'px';
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 6) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 9000);
+    }
+    // Denser hearts
+    setInterval(createHeart, 280);
+
+    // Sparkles near header
+    function createSparkleField() {
+      for (let i = 0; i < 24; i++) {
+        const s = document.createElement('div');
+        s.className = 'sparkle';
+        s.style.top = (40 + Math.random() * 120) + 'px';
+        s.style.left = (5 + Math.random() * 90) + 'vw';
+        s.style.animationDelay = (Math.random()*1.5) + 's';
+        document.body.appendChild(s);
+      }
+    }
+    createSparkleField();
+
+    // Confetti burst from cake center
+    function createConfetti() {
+      const cake = document.getElementById('cake');
+      const rect = cake.getBoundingClientRect();
+      const originX = rect.left + rect.width / 2;
+      const originY = rect.top + rect.height / 2;
+      const pieces = 80;
+      for (let i = 0; i < pieces; i++) {
+        const confetti = document.createElement('div');
+        const type = ['circle','diamond','tri',''][Math.floor(Math.random()*4)];
+        confetti.className = `confetti ${type}`.trim();
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 80 + Math.random() * 180;
+        const dx = Math.cos(angle) * distance;
+        const dy = Math.sin(angle) * distance;
+        confetti.style.setProperty('--x', originX + 'px');
+        confetti.style.setProperty('--y', originY + 'px');
+        confetti.style.setProperty('--dx', dx + 'px');
+        confetti.style.setProperty('--dy', dy + 'px');
+        confetti.style.setProperty('--rot', (Math.random()*360) + 'deg');
+        confetti.style.backgroundColor = `hsl(${Math.floor(Math.random()*360)}, 90%, 60%)`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 1800);
+      }
+    }
+
+    // Cake cutting animation
+    function cutCake() {
+      document.querySelector(".left").classList.add("cut-left");
+      document.querySelector(".right").classList.add("cut-right");
+      document.querySelector(".knife").style.display = "none";
+      const candle = document.getElementById("candle");
+      if (candle) candle.style.display = 'none';
+
+      // Confetti burst 🎊
+      createConfetti();
+
+      // Show card after cake halves move apart
+      setTimeout(() => {
+        const card = document.getElementById('card');
+        card.style.display = 'block';
+        // Smooth scroll so the card is centered on mobile
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1500);
+
+      // Ensure music plays on user interaction
+      const bgm = document.getElementById('bgm');
+      if (bgm && bgm.play) {
+        bgm.volume = 0.6;
+        bgm.play().catch(() => {});
+      }
+    }
+
+    // Fallback: any first tap resumes audio on some browsers
+    window.addEventListener('click', () => {
+      const bgm = document.getElementById('bgm');
+      if (bgm && bgm.paused) {
+        bgm.play().catch(() => {});
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
